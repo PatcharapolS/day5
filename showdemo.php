@@ -6,6 +6,7 @@ $dbname = "it64309010026";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
+gmysqli_set_charset($conn,"utf8");
 // Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
@@ -19,7 +20,7 @@ if (mysqli_num_rows($result) > 0) {
   while($row = mysqli_fetch_assoc($result)) {
     echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Address " . $row["address"]. "<br>";
     
-    gmysqli_set_charset($conn,"utf8");
+    
 
   }
 } else {
